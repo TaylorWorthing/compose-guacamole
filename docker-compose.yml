@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+  db:
+    build:
+      context: .
+    restart: always
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+  server:
+    image: glyptodon/guacd
+    restart: always
+
+  client:
+    image: glyptodon/guacamole
+    restart: always
+    ports:
+      - 8080:8080
+    links:
+      - server
+      - db
+    environment:
+      GUACD_PORT_4822_TCP_ADDR: server
+      GUACD_PORT_4822_TCP_PORT: 4822
+      MYSQL_HOSTNAME: db
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+volumes:
+  data:
