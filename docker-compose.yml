@@ -1,7 +1,8 @@
-version: '2'
+version: '3'
 
 services:
   db:
+    hostname: db
     build:
       context: .
     restart: always
@@ -13,21 +14,21 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
-  server:
-    image: guacamole/guacd
+  guacd:
+    hostname: guacd
+    image: guacamole/guacd:0.9.12-incubating
     restart: always
 
-  client:
-    image: guacamole/guacamole
+  guacamole:
+    image: guacamole/guacamole:0.9.12-incubating
     restart: always
     ports:
       - 8080:8080
     links:
-      - server
+      - guacd
       - db
     environment:
-      GUACD_PORT_4822_TCP_ADDR: server
-      GUACD_PORT_4822_TCP_PORT: 4822
+      GUACD_HOSTNAME: guacd
       MYSQL_HOSTNAME: db
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
