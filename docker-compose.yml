@@ -14,11 +14,11 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
   server:
-    image: glyptodon/guacd
+    image: guacamole/guacd
     restart: always
 
   client:
-    image: glyptodon/guacamole
+    image: guacamole/guacamole
     restart: always
     ports:
       - 8080:8080
