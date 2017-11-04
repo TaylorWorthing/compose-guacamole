@@ -2,17 +2,16 @@
 but can be difficult to setup properly. The deployment  process can be greatly
 simplified using docker containers, and orchestrated docker-compose.
 
-This is a sample configuration for docker-compose that puts together all the
+This is a sample configuration for docker-compose (originally from [BrowncoatShadow](https://github.com/BrowncoatShadow/compose-guacamole) that puts together all the
 components needed to deploy guacamole in a containerized environment.
-
 
 ## Usage
 Assuming you already have a working docker installation and docker-compose,
 setup is really easy.
 
 ```
-git clone git@github.com:BrowncoatShadow/compose-guacamole.git
-cd compose-guacamole
+git clone git@github.com:rcarmo/docker-compose-guacamole.git
+cd docker-compose-guacamole
 docker-compose up -d
 ```
 
@@ -20,7 +19,7 @@ Give it a few seconds to initialize and then you can access guacamole
 at `http://docker-host:8080/guacamole/`. The default username and password are
 both `guacadmin`.
 
-You may want to open the `.env` file and change the example database passwords
+You definitely want to open the `.env` file and change the example database passwords
 before deploying this to anything resembling a production environment.
 
 
