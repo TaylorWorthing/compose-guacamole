@@ -2,7 +2,7 @@
 but can be difficult to setup properly. The deployment  process can be greatly
 simplified using docker containers, and orchestrated docker-compose.
 
-This is a sample configuration for docker-compose (originally from [BrowncoatShadow](https://github.com/BrowncoatShadow/compose-guacamole) that puts together all the
+This is a sample configuration for docker-compose (originally from [BrowncoatShadow](https://github.com/BrowncoatShadow/compose-guacamole)) that puts together all the
 components needed to deploy guacamole in a containerized environment.
 
 ## Usage
