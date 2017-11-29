@@ -1,10 +1,10 @@
-# docker-compose-guacamole
+# compose-guacamole
 
 [Guacamole](https://guacamole.incubator.apache.org/) is a really useful tool,
 but can be difficult to setup properly. The deployment  process can be greatly
 simplified using docker containers, and orchestrated using `docker-compose`.
 
-This is a sample configuration for `docker-compose` (originally by [BrowncoatShadow](https://github.com/BrowncoatShadow/compose-guacamole)) that puts together all the components needed to deploy guacamole in a containerized environment. I merely fixed it and updated it to the newer official containers as of November 2017.
+This is a sample configuration for `docker-compose` that puts together all the components needed to deploy guacamole in a containerized environment. I merely fixed it and updated it to the newer official containers as of November 2017.
 
 This is currently version-pinned to `0.9.12-incubating`, since the database `Dockerfile` requires the client repository to be properly tagged to extract the database schema, and at the time of this writing there wasn't a newer tag.
 
@@ -14,7 +14,7 @@ Assuming you already have a working Docker installation and `docker-compose`,
 setup is really easy.
 
 ```
-git clone git@github.com:rcarmo/docker-compose-guacamole.git
+git clone git@github.com:BrowncoatShadow/compose-guacamole.git
 cd docker-compose-guacamole
 docker-compose up -d
 ```
