@@ -34,9 +34,9 @@ before deploying this to anything resembling a production environment.
   if the containers are destroyed.
 - `guacamole_db_1` - A MySQL container that acts as the database for all of
   guacamole's data.
-- `guacamole_server_1` - The guacamole server daemon (`guacd`) container that handles all the
+- `guacamole_guacd_1` - The guacamole server daemon (`guacd`) container that handles all the
   remote connections that guacamole makes.
-- `guacamole_client_1` - The guacamole client web application container that ties
+- `guacamole_guacamole_1` - The guacamole client web application container that ties
   everything together and provides the front-end for the user.
 
 
