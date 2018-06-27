@@ -2,7 +2,7 @@
 #
 # VERSION 0.1
 
-FROM mysql
+FROM mysql:5.7
 
 # Update these to stay in line with the official guacamole containers.
 ARG GUAC_REPO=glyptodon/guacamole-client
