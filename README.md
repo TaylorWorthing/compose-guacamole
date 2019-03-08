@@ -16,6 +16,7 @@ setup is really easy.
 ```
 git clone git@github.com:BrowncoatShadow/compose-guacamole.git
 cd docker-compose-guacamole
+./generate_sql.sh
 docker-compose up -d
 ```
 
@@ -48,6 +49,7 @@ tools from the client container to generate the needed schema files to
 initialize the database tables.
 
 That is not very portable for a Docker container, which should be able to be
-created and destroyed on the fly. This is remedied in this project with a `Dockerfile` for the
-database container that fetches the needed schema files and uses environment
-variables to self-initialize.
+created and destroyed on the fly. This is remedied in this project with
+the `generate_sql.sh` script and a `Dockerfile` for the database container that
+uses the generated schema file and uses environment variables to
+self-initialize.

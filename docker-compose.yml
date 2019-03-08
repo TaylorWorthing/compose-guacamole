@@ -16,11 +16,11 @@ services:
 
   guacd:
     hostname: guacd
-    image: guacamole/guacd:0.9.12-incubating
+    image: guacamole/guacd
     restart: always
 
   guacamole:
-    image: guacamole/guacamole:0.9.12-incubating
+    image: guacamole/guacamole
     restart: always
     ports:
       - 8080:8080
