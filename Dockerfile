@@ -2,9 +2,10 @@
 #
 # VERSION 0.1
 
-FROM mysql
+FROM mysql:5.7
 
-ADD ./schema/initdb.sql /docker-entrypoint-initdb.d/
+
+ADD ./initdb.sql /docker-entrypoint-initdb.d/
 # Create a simple script that will run before the schema files and modify them
 # to use the database created by the MYSQL_DATABASE environment variable.
 
