@@ -1,0 +1,9 @@
+ARG GUAC_VERSION=1.0.0
+FROM guacamole/guacamole:${GUAC_VERSION}
+ARG GUAC_VERSION=1.0.0
+
+RUN mkdir -p /root/.guactemplate/extensions
+RUN curl -sL "http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/${GUAC_VERSION}/binary/guacamole-auth-quickconnect-${GUAC_VERSION}.tar.gz" | tar xOzf - guacamole-auth-quickconnect-${GUAC_VERSION}/guacamole-auth-quickconnect-${GUAC_VERSION}.jar > /root/.guactemplate/extensions/guacamole-auth-quickconnect-${GUAC_VERSION}.jar
+RUN curl -sL "http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/${GUAC_VERSION}/binary/guacamole-auth-totp-${GUAC_VERSION}.tar.gz" | tar xOzf - guacamole-auth-totp-${GUAC_VERSION}/guacamole-auth-totp-${GUAC_VERSION}.jar > /root/.guactemplate/extensions/guacamole-auth-totp-${GUAC_VERSION}.jar
+
+ENV GUACAMOLE_HOME=/root/.guactemplate

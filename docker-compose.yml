@@ -16,11 +16,17 @@ services:
 
   guacd:
     hostname: guacd
-    image: guacamole/guacd:0.9.12-incubating
+    image: disconn3ct/guacd:1.0.0
     restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-guacd
 
   guacamole:
-    image: guacamole/guacamole:0.9.12-incubating
+    image: disconn3ct/guacamole:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile-guacamole
     restart: always
     ports:
       - 8080:8080
